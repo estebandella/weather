@@ -2,10 +2,13 @@ import { useEffect, useState } from "react"
 import WeatherForm from "./weatherForm";
 import WeatherMainInfo from "./weatherMainInfo";
 
+import styles from './weatherApp.module.css';
+import Loading from './loading';
 
 export default function WeatherApp(){
-
     const [weather, setWeather]=useState(null);
+
+
 
     useEffect(()=>{
         loadInfo();
@@ -14,6 +17,9 @@ export default function WeatherApp(){
     useEffect(()=>{
         document.title = `Weather | ${weather?.location.name}`
     },[weather]);
+
+
+
     
     async function loadInfo(city = 'london'){
         try {
@@ -22,7 +28,13 @@ export default function WeatherApp(){
                 );
 
                 const json = await request.json();
-                setWeather(json); //GUARDO LA info de la api
+
+                // aca hatgo qeu se demore la actualizacion de mi estado, simula conexion lenta
+                setTimeout(() =>{
+                    setWeather(json); //GUARDO LA info de la api
+                },2000 );
+
+
                 console.log(json);
         } catch (error) {}
     }
@@ -33,9 +45,11 @@ export default function WeatherApp(){
     }
     
     return(
-        <div>
+        <div className={styles.weatherContainer}>
             <WeatherForm onChangeCity = {handleChangeCity} />
-            <WeatherMainInfo weather={weather} />
+            {weather ? <WeatherMainInfo weather={weather} /> : <Loading /> }
+
+            {/* <WeatherMainInfo weather={weather} /> */}
         </div>
     );
 }
