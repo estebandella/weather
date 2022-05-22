@@ -23,8 +23,9 @@ movil: (+54) 294 434-9130
 
 ## Resumen: 
 
-Es un formulario donde un usuario ingresa tareas para realizar y crea una lista que luego puoede ser editada. 
+Es un pequeño widget que nos permita consultar la temperatura el forecast o el clima de una ciudad, incluso mostrando el mapa de la ciudad.
 
 ## Objetivos:
 
 Objetivo 1: Crear un formulario con React JS.
+Objetivo 2: Utilizar una API y con Hooks actualizar instantanemente la respuesta.
