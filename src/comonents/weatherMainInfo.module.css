@@ -3,6 +3,7 @@
     padding: 40px;
     border-radius: 5px;
     box-sizing: border-box;
+    background-color: rgba(179, 179, 179, 0.662);
 }
 
 .city {
@@ -38,4 +39,8 @@
 .current {
     font-size: 38px;
     font-weight: bold;
+}
+
+.mapa {
+    padding-top: 30px;
 }
