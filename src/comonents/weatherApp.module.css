@@ -4,3 +4,11 @@
     margin: 150px auto;
 }
 
+@media (max-width: 530px) {
+    .weatherContainer {
+        width: 360px;
+
+        margin: 50px auto;
+    } 
+
+  }
